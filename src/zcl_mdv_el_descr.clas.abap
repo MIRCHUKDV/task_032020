@@ -83,6 +83,7 @@ CLASS ZCL_MDV_EL_DESCR IMPLEMENTATION.
 
 *   Получаем описание ЭД по входному параметру
     data(lo_elem) = cast cl_abap_elemdescr( cl_abap_typedescr=>describe_by_data( iv_var ) ).
+    check lo_elem->is_ddic_type( ) eq abap_true.
 
 
 *   Проверяем содержимое буфера
