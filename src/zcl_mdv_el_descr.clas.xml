@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_MDV_EL_DESCR</CLSNAME>
+    <VERSION>1</VERSION>
+    <LANGU>R</LANGU>
+    <DESCRIPT>Класс для работы с ЭД</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_MDV_EL_DESCR</CLSNAME>
+     <CMPNAME>GET_VAL_DESCR</CMPNAME>
+     <LANGU>R</LANGU>
+     <DESCRIPT>Возвращает текстовое описание для значения переменной</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_MDV_EL_DESCR</CLSNAME>
+     <CMPNAME>GT_BUFFER</CMPNAME>
+     <LANGU>R</LANGU>
+     <DESCRIPT>Буфер</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_MDV_EL_DESCR</CLSNAME>
+     <CMPNAME>_GET_FIELD_BY_DOMEN</CMPNAME>
+     <LANGU>R</LANGU>
+     <DESCRIPT>Возвращает имя поля таблицы по имени домена</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_MDV_EL_DESCR</CLSNAME>
+     <CMPNAME>_GET_LANG_FIELD</CMPNAME>
+     <LANGU>R</LANGU>
+     <DESCRIPT>Возвращает языковое поле из таблицы</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_MDV_EL_DESCR</CLSNAME>
+     <CMPNAME>_GET_TEXT_FIELD</CMPNAME>
+     <LANGU>R</LANGU>
+     <DESCRIPT>Возвращает текстовое поле из таблицы</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZCL_MDV_EL_DESCR</CLSNAME>
+     <CMPNAME>_GET_TEXT_FROM_FIXED</CMPNAME>
+     <LANGU>R</LANGU>
+     <DESCRIPT>Возвращает ddtext</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
