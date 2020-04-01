@@ -204,8 +204,7 @@ CLASS ZCL_MDV_EL_DESCR IMPLEMENTATION.
 
 
   method _get_field_by_domen.
-
-    "Метод определяет в таблице первое ключевое поле с типом входящего домена.
+*   Метод определяет в таблице первое ключевое поле с типом входящего домена.
 
     loop at cast cl_abap_structdescr( cl_abap_typedescr=>describe_by_name( iv_tabname ) )->get_ddic_field_list( ) "получаем описание и перечень полей таблицы по входящему имени таблицы
             assigning field-symbol(<ls>)
@@ -214,29 +213,26 @@ CLASS ZCL_MDV_EL_DESCR IMPLEMENTATION.
       return.
     endloop.
 
-
-
   endmethod.
 
 
   method _get_lang_field.
-    "Метод определяет поле языка в таблице.
+*   Метод определяет ключевое поле языка в таблице.
 
     loop at cast cl_abap_structdescr( cl_abap_typedescr=>describe_by_name( iv_tabname ) )->get_ddic_field_list( ) "получаем описание и перечень полей таблицы по входящему имени
             assigning field-symbol(<ls>)
-            where datatype = 'LANG'.
+            where datatype = 'LANG' and keyflag eq abap_true.
       "берем первую подходящую запись
       rv_fname = <ls>-fieldname.
       return.
     endloop.
 
-
   endmethod.
 
 
   method _get_text_field.
-    "Метод определяет первое подходящее текстовое поле в таблице. Поле должно быть неключевым, символьным и иметь длину хотя бы 10 символов.
-    "todo: проверить, как будет работать с типом string (однако в стандарте подобных полей в текстовых таблицах не видел).
+*   Метод определяет первое подходящее текстовое поле в таблице. Поле должно быть неключевым, символьным и иметь длину хотя бы 10 символов.
+*   todo: проверить, как будет работать с типом string (однако в стандарте подобных полей в текстовых таблицах не видел).
 
     loop at cast cl_abap_structdescr( cl_abap_typedescr=>describe_by_name( iv_tabname ) )->get_ddic_field_list( ) "получаем описание и перечень полей таблицы по входящему имени
             assigning field-symbol(<ls>)
@@ -246,15 +242,14 @@ CLASS ZCL_MDV_EL_DESCR IMPLEMENTATION.
       return.
     endloop.
 
-
   endmethod.
 
 
   method _get_text_from_fixed.
+*   Метод возвращает текстовое описание из фиксированных значений (отдельные значения и диапазоны) 
     types:
       "тип диапазона, в который можно поместить любые значения (пока без динамики)
       tr_string type range of string.
-
 
     loop at it_fixed assigning field-symbol(<ls_fixed>).
       if iv_var in value tr_string( ( sign = 'I' option = <ls_fixed>-option low = <ls_fixed>-low high = <ls_fixed>-high ) ).
@@ -265,4 +260,5 @@ CLASS ZCL_MDV_EL_DESCR IMPLEMENTATION.
     endloop.
 
   endmethod.
+  
 ENDCLASS.
