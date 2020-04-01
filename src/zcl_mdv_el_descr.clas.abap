@@ -5,7 +5,6 @@ class ZCL_MDV_EL_DESCR definition
 
 public section.
 
-*    preferred parameter IV_VAR
   class-methods GET_VAL_DESCR
     importing
       !IV_VAR type ANY
