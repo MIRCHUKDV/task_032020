@@ -116,7 +116,7 @@ CLASS ZCL_MDV_EL_DESCR IMPLEMENTATION.
       from dd01l as d1
       left join dd08l as d8 on d8~checktable = d1~entitytab and
                                d8~frkart = 'TEXT' and
-                               d8~as4local = 'A' "todo: find const
+                               d8~as4local = 'A' ": find const
       into @data(ls_res)
       where d1~domname = @ls_ddic_field-domname and
             d1~as4local = 'A' and
@@ -235,7 +235,7 @@ CLASS ZCL_MDV_EL_DESCR IMPLEMENTATION.
 
     loop at cast cl_abap_structdescr( cl_abap_typedescr=>describe_by_name( iv_tabname ) )->get_ddic_field_list( ) "получаем описание и перечень полей таблицы по входящему имени
             assigning field-symbol(<ls>)
-            where leng >= 10 and inttype = 'C' and keyflag is initial.  "и находим первое немаленькое неключевое символьное поле
+            where ( leng >= 10 and inttype = 'C' or inttype = 'g' ) and keyflag is initial.  "и находим первое немаленькое неключевое символьное поле
       "берем первую подходящую запись
       rv_fname = <ls>-fieldname.
       return.
